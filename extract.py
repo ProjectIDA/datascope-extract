@@ -53,6 +53,7 @@ def getStationList():
     FIELDLIST = ["code", "begt", "endt", "lat", "lon", "elev", "staname", "lddate"]
     RANGES = ((0, 6), (6, 18), (24, 18), (42,10), (52,10), (62,10), (72,50), (122,19))
 
+    rowList = []
     rowDict = {}
     columnDict = {}
     idx = 1
@@ -62,11 +63,11 @@ def getStationList():
             columnList.append(line[rng[0]:rng[0]+rng[1]].strip())
             columnDict = dict(zip(FIELDLIST, columnList))
 
-        print(columnDict)
-        rowDict.update({"pk" : idx, {"model" : "stations.station", {"fields" : columnDict}}})
+        rowDict = { "model" : "stations.station", "pk" : idx, "fields" : columnDict }
         idx += 1
-
-    print(rowDict)
+        rowList.append(rowDict)
+    
+    print(rowList)
 
     site_fp.close()
     json_fp.close()
