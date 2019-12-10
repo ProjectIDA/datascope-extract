@@ -3,6 +3,7 @@
 # system imports
 import sys
 import os
+import json
 
 # local imports
 
@@ -11,18 +12,23 @@ from fabulous.color import red, bold
 
 ################################################################################
 def main():
-    getStationList()
+
+    fieldList = ["code", "begt", "endt", "lat", "lon", "elev", "staname", "lddate"]
+    ranges = ((0, 6), (6, 18), (24, 18), (42,10), (52,10), (62,10), (72,50), (122,19))
+    tableName = "IDA.site"
+    outfileName = tableName + ".json"
+
+    extractTable(tableName, outfileName, fieldList, ranges)
 
 ################################################################################
-def getStationList():
+def extractTable(table, ofName, fields, ranges):
  
     dbDir = os.environ.get('IDA_DATASCOPEDB_DIR')
-    dbSite = dbDir + '/' + "IDA.site"
-    jsonOut = "IDAsite.json"
-    testOut = "IDAsite.out"
+    dbSite = dbDir + '/' + table
+    jsonOut = ofName
 
     try:
-        site_fp = open(dbSite, 'r')
+        table_fp = open(dbSite, 'r')
     except FileNotFoundError:
         print("File does not exist: {}".format(dbSite))
         raise SystemExit
@@ -39,39 +45,25 @@ def getStationList():
         print ("Could not read from: {}".format(jsonOut))
         raise SystemExit
 
-    try:
-        test_fp = open(testOut, 'w')
-    except FileNotFoundError:
-        print("File does not exist: {}".format(test.out))
-        raise SystemExit
-    except IOError:
-        print ("Could not read from: {}".format(test.out))
-        raise SystemExit
-
-    siteList = []
-
-    FIELDLIST = ["code", "begt", "endt", "lat", "lon", "elev", "staname", "lddate"]
-    RANGES = ((0, 6), (6, 18), (24, 18), (42,10), (52,10), (62,10), (72,50), (122,19))
-
     rowList = []
     rowDict = {}
     columnDict = {}
     idx = 1
-    for line in site_fp:
+    for line in table_fp:
         columnList = []
-        for rng in RANGES:
+        for rng in ranges:
             columnList.append(line[rng[0]:rng[0]+rng[1]].strip())
-            columnDict = dict(zip(FIELDLIST, columnList))
+            columnDict = dict(zip(fields, columnList))
 
         rowDict = { "model" : "stations.station", "pk" : idx, "fields" : columnDict }
         idx += 1
         rowList.append(rowDict)
     
-    print(rowList)
+    json_string = json.dumps(rowList)
+    json_fp.write(json_string)
 
-    site_fp.close()
+    table_fp.close()
     json_fp.close()
-    test_fp.close()
 
 ################################################################################
 if __name__ == '__main__':
