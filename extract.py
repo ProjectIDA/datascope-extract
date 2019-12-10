@@ -14,7 +14,8 @@ from fabulous.color import red, bold
 def main():
 
     fieldList = ["code", "begt", "endt", "lat", "lon", "elev", "staname", "lddate"]
-    ranges = ((0, 6), (6, 18), (24, 18), (42,10), (52,10), (62,10), (72,50), (122,19))
+    #ranges = ((0,6), (6,18), (24,18), (42,10), (52,10), (62,10), (72,50), (122,19))
+    ranges = ((0,6), (7,17), (25,17), (43,9), (53,9), (63,9), (73,50), (124,17))
     tableName = "IDA.site"
     outfileName = tableName + ".json"
 
