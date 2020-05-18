@@ -1,0 +1,322 @@
+[
+   {
+      "model": "stations.instype",
+      "pk": 1,
+      "fields": {
+         "abbrev": "ASKHP",
+         "description": "Askania horizontal pendulum"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 2,
+      "fields": {
+         "abbrev": "MAG-03",
+         "description": "Bartington MAG-03MSESL100 magnetometer"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 3,
+      "fields": {
+         "abbrev": "STRAIN",
+         "description": "Cambridge Invar wire strainmeter"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 4,
+      "fields": {
+         "abbrev": "SG-056",
+         "description": "GWR Dual Sphere Superconducting Gravimeter"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 5,
+      "fields": {
+         "abbrev": "GS13",
+         "description": "Geotech GS-13 Seismometer"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 6,
+      "fields": {
+         "abbrev": "K54000",
+         "description": "Geotech KS-54000 Borehole Seismometer"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 7,
+      "fields": {
+         "abbrev": "3ESPC",
+         "description": "Guralp CMG-3ESP Compact Seismometer"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 8,
+      "fields": {
+         "abbrev": "CMG3T",
+         "description": "Guralp CMG-3T Seismometer"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 9,
+      "fields": {
+         "abbrev": "CMG1",
+         "description": "Guralp CMG1 Seismometer"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 10,
+      "fields": {
+         "abbrev": "TILT",
+         "description": "Horsfall long-baseline fluid tilt"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 11,
+      "fields": {
+         "abbrev": "FBAEST",
+         "description": "Kinemetrics Episensor ES-T"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 12,
+      "fields": {
+         "abbrev": "FBA23",
+         "description": "Kinemetrics FBA-23 Low-Gain Sensor"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 13,
+      "fields": {
+         "abbrev": "LRGRAV",
+         "description": "La Coste-Romberg Gravimeter"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 14,
+      "fields": {
+         "abbrev": "TRI_PH",
+         "description": "Nanometrics Trillium 120 Posthole BB Seismometer"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 15,
+      "fields": {
+         "abbrev": "TR240",
+         "description": "Nanometrics Trillium 240 Seismometer"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 16,
+      "fields": {
+         "abbrev": "PARO",
+         "description": "Paroscientific microbarograph"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 17,
+      "fields": {
+         "abbrev": "FLXMAG",
+         "description": "Rasmusen FGE Fluxgate magnetometer"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 18,
+      "fields": {
+         "abbrev": "BM-G",
+         "description": "Relative Microbarograph, BM-G"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 19,
+      "fields": {
+         "abbrev": "SETRA",
+         "description": "Setra Barometric Pressure Transducer model 270"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 20,
+      "fields": {
+         "abbrev": "STS1E3",
+         "description": "Streckeisen STS-1 Seismometer with Metrozet E300"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 21,
+      "fields": {
+         "abbrev": "STS1HB",
+         "description": "Streckeisen STS-1H/VBB Seismometer"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 22,
+      "fields": {
+         "abbrev": "STS1VB",
+         "description": "Streckeisen STS-1V/VBB Seismometer"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 23,
+      "fields": {
+         "abbrev": "STS2",
+         "description": "Streckeisen STS-2 Seismometer"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 24,
+      "fields": {
+         "abbrev": "STS2_5",
+         "description": "Streckeisen STS-2.5 Seismometer"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 25,
+      "fields": {
+         "abbrev": "STS5_A",
+         "description": "Streckeisen STS-5A Seismometer"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 26,
+      "fields": {
+         "abbrev": "M2166V",
+         "description": "Metrozet M2166-VBV Seismometer"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 27,
+      "fields": {
+         "abbrev": "M2166H",
+         "description": "Metrozet M2166-VBH Seismometer"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 28,
+      "fields": {
+         "abbrev": "Q330HR",
+         "description": "Quanterra Q330-HR digitizer"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 29,
+      "fields": {
+         "abbrev": "GSM-90",
+         "description": "Overhauser GSM-90 Magnetometer from GEM Systems"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 30,
+      "fields": {
+         "abbrev": "T360BH",
+         "description": "Nanometrics Trillium 360 Seismometer - Borehole"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 31,
+      "fields": {
+         "abbrev": "T360SV",
+         "description": "Nanometrics Trillium 360 Seismometer - Vault"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 32,
+      "fields": {
+         "abbrev": "KS54A",
+         "description": "Geotech KS-54000 (Type A) Borehole Seismometer"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 33,
+      "fields": {
+         "abbrev": "KS54B",
+         "description": "Geotech KS-54000 (Type B) Borehole Seismometer"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 34,
+      "fields": {
+         "abbrev": "TR12PA",
+         "description": "Nanometrics Trillium 120 (Type A) Posthole BB Seis"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 35,
+      "fields": {
+         "abbrev": "TR12PB",
+         "description": "Nanometrics Trillium 120 (Type B) Posthole BB Seis"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 36,
+      "fields": {
+         "abbrev": "WXT520",
+         "description": "Vaisala Weather Transmitter - WXT520"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 37,
+      "fields": {
+         "abbrev": "HI3312",
+         "description": "Hyperion IFS-3312 Series Infrasound Sensor"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 38,
+      "fields": {
+         "abbrev": "STS6",
+         "description": "Streckeisen STS-6 Seismometer"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 39,
+      "fields": {
+         "abbrev": "STS632",
+         "description": "Streckeisen STS-6 Seismometer (prototype 3.2)"
+      }
+   },
+   {
+      "model": "stations.instype",
+      "pk": 40,
+      "fields": {
+         "abbrev": "HI3113",
+         "description": "Hyperion IFS-3113 Series Infrasound Sensor"
+      }
+   }
+]
