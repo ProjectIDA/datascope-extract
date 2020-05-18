@@ -1,1 +1,772 @@
-[{"model": "stations.station", "pk": 1, "fields": {"code": "AAK", "begt": "655689600.00000", "endt": "9999999999.99900", "lat": "42.6375", "lon": "74.4942", "elev": "1.6331", "staname": "Ala Archa, Kyrgyzstan", "lddate": "988076168.85628"}}, {"model": "stations.station", "pk": 2, "fields": {"code": "ABKT", "begt": "735696000.00000", "endt": "1388447999.90000", "lat": "37.9304", "lon": "58.1189", "elev": "0.6780", "staname": "Alibek, Turkmenistan", "lddate": "988076181.31532"}}, {"model": "stations.station", "pk": 3, "fields": {"code": "ABPO", "begt": "1175644800.00000", "endt": "9999999999.99900", "lat": "-19.0180", "lon": "47.2290", "elev": "1.5280", "staname": "Ambohimpanompo, Madagascar", "lddate": "1175990400.00000"}}, {"model": "stations.station", "pk": 4, "fields": {"code": "ALE", "begt": "635385600.00000", "endt": "9999999999.99900", "lat": "82.5033", "lon": "-62.3500", "elev": "0.0600", "staname": "Alert, NU, Canada", "lddate": "988076187.09696"}}, {"model": "stations.station", "pk": 5, "fields": {"code": "ARU", "begt": "590198400.00000", "endt": "1254095999.90000", "lat": "56.4302", "lon": "58.5625", "elev": "0.2500", "staname": "Arti, Russia", "lddate": "988076196.39185"}}, {"model": "stations.station", "pk": 6, "fields": {"code": "ARU", "begt": "1254096000.00000", "endt": "1536451199.99900", "lat": "56.4293", "lon": "58.5615", "elev": "0.2600", "staname": "Arti, Russia", "lddate": "1536451200.00000"}}, {"model": "stations.station", "pk": 7, "fields": {"code": "ARTI", "begt": "1536451200.00000", "endt": "9999999999.99900", "lat": "56.3879", "lon": "58.3849", "elev": "0.3200", "staname": "Arti, Russia", "lddate": "1536451200.00000"}}, {"model": "stations.station", "pk": 8, "fields": {"code": "ASCN", "begt": "780969600.00000", "endt": "9999999999.99900", "lat": "-7.9327", "lon": "-14.3601", "elev": "0.1730", "staname": "Butt Crater, Ascension Island", "lddate": "988076205.31267"}}, {"model": "stations.station", "pk": 9, "fields": {"code": "BFO", "begt": "833328000.00000", "endt": "9999999999.99900", "lat": "48.3301", "lon": "8.3296", "elev": "0.6380", "staname": "Black Forest Observatory, Schiltach, Germany", "lddate": "988076210.38863"}}, {"model": "stations.station", "pk": 10, "fields": {"code": "BORG", "begt": "775526400.00000", "endt": "9999999999.99900", "lat": "64.7474", "lon": "-21.3268", "elev": "0.1100", "staname": "Borgarfjordur, Asbjarnarstadir, Iceland", "lddate": "988076214.50800"}}, {"model": "stations.station", "pk": 11, "fields": {"code": "BORK", "begt": "1566432000.00000", "endt": "9999999999.99900", "lat": "53.0461", "lon": "70.3184", "elev": "0.3340", "staname": "Burabay, Kazakhstan", "lddate": "1566432000.00000"}}, {"model": "stations.station", "pk": 12, "fields": {"code": "BRVK", "begt": "778377600.00000", "endt": "1566431999.99900", "lat": "53.0581", "lon": "70.2828", "elev": "0.3300", "staname": "Borovoye, Kazakhstan", "lddate": "988076219.49441"}}, {"model": "stations.station", "pk": 13, "fields": {"code": "CMLA", "begt": "826416000.00000", "endt": "9999999999.99900", "lat": "37.7637", "lon": "-25.5243", "elev": "0.4290", "staname": "Cha de Macela, Sao Miguel Island, Azores", "lddate": "988076228.99497"}}, {"model": "stations.station", "pk": 14, "fields": {"code": "COCO", "begt": "850608000.00000", "endt": "9999999999.99900", "lat": "-12.1901", "lon": "96.8349", "elev": "0.0010", "staname": "West Island, Cocos (Keeling) Islands", "lddate": "988076232.27533"}}, {"model": "stations.station", "pk": 15, "fields": {"code": "DGAR", "begt": "1074729600.00000", "endt": "9999999999.99900", "lat": "-7.4121", "lon": "72.4525", "elev": "0.0010", "staname": "Diego Garcia, Chagos Islands, Indian Ocean", "lddate": "1076461908.12379"}}, {"model": "stations.station", "pk": 16, "fields": {"code": "EFI", "begt": "824428800.00000", "endt": "9999999999.99900", "lat": "-51.6753", "lon": "-58.0637", "elev": "0.1100", "staname": "Mount Kent, East Falkland Island", "lddate": "988076235.54865"}}, {"model": "stations.station", "pk": 17, "fields": {"code": "ERM", "begt": "643248000.00000", "endt": "9999999999.99900", "lat": "42.0150", "lon": "143.1572", "elev": "0.0400", "staname": "Erimo, Hokkaido Island, Japan", "lddate": "988076240.65241"}}, {"model": "stations.station", "pk": 18, "fields": {"code": "ESK", "begt": "563760000.00000", "endt": "9999999999.99900", "lat": "55.3167", "lon": "-3.2050", "elev": "0.2420", "staname": "Eskdalemuir, Scotland, UK", "lddate": "988076246.77857"}}, {"model": "stations.station", "pk": 19, "fields": {"code": "FFC", "begt": "746496000.00000", "endt": "9999999999.99900", "lat": "54.7250", "lon": "-101.9783", "elev": "0.3380", "staname": "Flin Flon, Canada", "lddate": "988076252.77558"}}, {"model": "stations.station", "pk": 20, "fields": {"code": "GAR", "begt": "590198400.00000", "endt": "707097599.90000", "lat": "39.0052", "lon": "70.3328", "elev": "1.3000", "staname": "Garm, Tajikistan", "lddate": "988076256.47199"}}, {"model": "stations.station", "pk": 21, "fields": {"code": "HOPE", "begt": "850176000.00000", "endt": "9999999999.99900", "lat": "-54.2836", "lon": "-36.4879", "elev": "0.0200", "staname": "Hope Point, South Georgia Island", "lddate": "988076259.04433"}}, {"model": "stations.station", "pk": 22, "fields": {"code": "JTS", "begt": "798595200.00000", "endt": "9999999999.99900", "lat": "10.2908", "lon": "-84.9525", "elev": "0.3400", "staname": "Las Juntas de Abangares, Costa Rica", "lddate": "988076262.34485"}}, {"model": "stations.station", "pk": 23, "fields": {"code": "KAPI", "begt": "918259200.00000", "endt": "9999999999.99900", "lat": "-5.0142", "lon": "119.7517", "elev": "0.3000", "staname": "Kappang, Sulawesi, Indonesia", "lddate": "988076269.73878"}}, {"model": "stations.station", "pk": 24, "fields": {"code": "KDAK", "begt": "865814400.00000", "endt": "9999999999.99900", "lat": "57.7828", "lon": "-152.5835", "elev": "0.1520", "staname": "Kodiak Island, Alaska, USA", "lddate": "988076272.99418"}}, {"model": "stations.station", "pk": 25, "fields": {"code": "KIV", "begt": "590198400.00000", "endt": "760060799.90000", "lat": "43.9562", "lon": "42.6888", "elev": "1.2100", "staname": "Kislovodsk, Russia", "lddate": "988076276.14233"}}, {"model": "stations.station", "pk": 26, "fields": {"code": "KIV", "begt": "760060800.00000", "endt": "9999999999.99900", "lat": "43.9553", "lon": "42.6863", "elev": "1.0540", "staname": "Kislovodsk, Russia", "lddate": "988076276.20005"}}, {"model": "stations.station", "pk": 27, "fields": {"code": "KURK", "begt": "796176000.00000", "endt": "9999999999.99900", "lat": "50.7154", "lon": "78.6202", "elev": "0.1840", "staname": "Kurchatov, Kazakhstan", "lddate": "988076285.33682"}}, {"model": "stations.station", "pk": 28, "fields": {"code": "KWAJ", "begt": "930009600.00000", "endt": "1502226539.99900", "lat": "8.8019", "lon": "167.6130", "elev": "0.0000", "staname": "Kwajalein Atoll, Pacific Ocean", "lddate": "988076291.50157"}}, {"model": "stations.station", "pk": 29, "fields": {"code": "KWJN", "begt": "1501286400.00000", "endt": "9999999999.99900", "lat": "9.2873", "lon": "167.5369", "elev": "0.0000", "staname": "Gagan, Kwajalein Atoll, Marshall Islands", "lddate": "988076291.50157"}}, {"model": "stations.station", "pk": 30, "fields": {"code": "LVZ", "begt": "723168000.00000", "endt": "9999999999.99900", "lat": "67.8979", "lon": "34.6514", "elev": "0.6300", "staname": "Lovozero, Russia", "lddate": "988076294.65665"}}, {"model": "stations.station", "pk": 31, "fields": {"code": "MBAR", "begt": "937958400.00000", "endt": "9999999999.99900", "lat": "-0.6019", "lon": "30.7382", "elev": "1.3900", "staname": "Mbarara, Uganda", "lddate": "988076300.53094"}}, {"model": "stations.station", "pk": 32, "fields": {"code": "MSEY", "begt": "800496000.00000", "endt": "9999999999.99900", "lat": "-4.6737", "lon": "55.4792", "elev": "0.4750", "staname": "Mahe, Seychelles", "lddate": "988076304.00173"}}, {"model": "stations.station", "pk": 33, "fields": {"code": "MSVF", "begt": "769737600.00000", "endt": "9999999999.99900", "lat": "-17.7448", "lon": "178.0528", "elev": "0.8011", "staname": "Monasavu, Fiji", "lddate": "988076310.39046"}}, {"model": "stations.station", "pk": 34, "fields": {"code": "NIL", "begt": "787708800.00000", "endt": "9999999999.99900", "lat": "33.6506", "lon": "73.2686", "elev": "0.6290", "staname": "Nilore, Pakistan", "lddate": "988076312.70678"}}, {"model": "stations.station", "pk": 35, "fields": {"code": "NNA", "begt": "582940800.00000", "endt": "9999999999.99900", "lat": "-11.9875", "lon": "-76.8422", "elev": "0.5750", "staname": "Nana, Peru", "lddate": "988076319.18276"}}, {"model": "stations.station", "pk": 36, "fields": {"code": "NRIL", "begt": "724377600.00000", "endt": "939859199.90000", "lat": "69.5049", "lon": "88.4414", "elev": "0.0920", "staname": "Norilsk, Russia", "lddate": "988076327.22614"}}, {"model": "stations.station", "pk": 37, "fields": {"code": "NVS", "begt": "711158400.00000", "endt": "761356799.90000", "lat": "54.8404", "lon": "83.2346", "elev": "0.1500", "staname": "Novosibirsk, Russia", "lddate": "988076331.92476"}}, {"model": "stations.station", "pk": 38, "fields": {"code": "OBN", "begt": "590198400.00000", "endt": "9999999999.99900", "lat": "55.1146", "lon": "36.5674", "elev": "0.1600", "staname": "Obninsk, Russia", "lddate": "988076335.47499"}}, {"model": "stations.station", "pk": 39, "fields": {"code": "PALK", "begt": "966902400.00000", "endt": "9999999999.99900", "lat": "7.2728", "lon": "80.7022", "elev": "0.4600", "staname": "Pallekele, Sri Lanka", "lddate": "988076342.78483"}}, {"model": "stations.station", "pk": 40, "fields": {"code": "PFO", "begt": "530496000.00000", "endt": "1152748799.90000", "lat": "33.6092", "lon": "-116.4553", "elev": "1.2800", "staname": "Pinon Flat, California, USA", "lddate": "1152662400.00000"}}, {"model": "stations.station", "pk": 41, "fields": {"code": "PFO", "begt": "1152748800.00000", "endt": "9999999999.99900", "lat": "33.6107", "lon": "-116.4555", "elev": "1.2800", "staname": "Pinon Flat, California, USA", "lddate": "1152662400.00000"}}, {"model": "stations.station", "pk": 42, "fields": {"code": "RAYN", "begt": "820454400.00000", "endt": "9999999999.99900", "lat": "23.5225", "lon": "45.5032", "elev": "0.6310", "staname": "Ar Rayn, Saudi Arabia", "lddate": "988076378.47712"}}, {"model": "stations.station", "pk": 43, "fields": {"code": "RPN", "begt": "550713600.00000", "endt": "9999999999.99900", "lat": "-27.1267", "lon": "-109.3344", "elev": "0.1100", "staname": "Rapanui, Easter Island, Chile", "lddate": "988076386.28496"}}, {"model": "stations.station", "pk": 44, "fields": {"code": "SACV", "begt": "959558400.00000", "endt": "9999999999.99900", "lat": "14.9702", "lon": "-23.6085", "elev": "0.3870", "staname": "Santiago Island, Cape Verde", "lddate": "988076400.93932"}}, {"model": "stations.station", "pk": 45, "fields": {"code": "SHEL", "begt": "803520000.00000", "endt": "9999999999.99900", "lat": "-15.9594", "lon": "-5.7455", "elev": "0.5370", "staname": "Horse Pasture, St. Helena Island", "lddate": "988076404.60131"}}, {"model": "stations.station", "pk": 46, "fields": {"code": "SUR", "begt": "657244800.00000", "endt": "9999999999.99900", "lat": "-32.3797", "lon": "20.8117", "elev": "1.7700", "staname": "Sutherland, South Africa", "lddate": "988076408.14794"}}, {"model": "stations.station", "pk": 47, "fields": {"code": "TAU", "begt": "758764800.00000", "endt": "9999999999.99900", "lat": "-42.9099", "lon": "147.3204", "elev": "0.1320", "staname": "Hobart, Tasmania, Australia", "lddate": "988076418.35151"}}, {"model": "stations.station", "pk": 48, "fields": {"code": "TLY", "begt": "655689600.00000", "endt": "9999999999.99900", "lat": "51.6807", "lon": "103.6438", "elev": "0.5790", "staname": "Talaya, Russia", "lddate": "988076419.77702"}}, {"model": "stations.station", "pk": 49, "fields": {"code": "UOSS", "begt": "1241654400.00000", "endt": "9999999999.99900", "lat": "24.9453", "lon": "56.2042", "elev": "0.2844", "staname": "Univ. of Sharjah, Sharjah, United Arab Emirates", "lddate": "1242000000.00000"}}, {"model": "stations.station", "pk": 50, "fields": {"code": "WRAB", "begt": "764726400.00000", "endt": "9999999999.99900", "lat": "-19.9336", "lon": "134.3600", "elev": "0.3660", "staname": "Tennant Creek, NT, Australia", "lddate": "988076429.90229"}}, {"model": "stations.station", "pk": 51, "fields": {"code": "XBFO", "begt": "1537142400.00000", "endt": "9999999999.99900", "lat": "48.3301", "lon": "8.3296", "elev": "0.6380", "staname": "Black Forest Observatory, Schiltach, Germany", "lddate": "988076210.38863"}}, {"model": "stations.station", "pk": 52, "fields": {"code": "XPF", "begt": "755913600.00000", "endt": "1136073599.90000", "lat": "33.6092", "lon": "-116.4533", "elev": "1.2800", "staname": "Pinon Flat, California, USA", "lddate": "1152662400.00000"}}, {"model": "stations.station", "pk": 53, "fields": {"code": "XPF", "begt": "1136073600.00000", "endt": "1182880799.90000", "lat": "33.6107", "lon": "-116.4555", "elev": "1.2800", "staname": "Pinon Flat, California, USA", "lddate": "1476311928.65752"}}, {"model": "stations.station", "pk": 54, "fields": {"code": "XPFO", "begt": "1182816000.00000", "endt": "9999999999.99900", "lat": "33.6107", "lon": "-116.4555", "elev": "1.2800", "staname": "Pinon Flat, California, USA", "lddate": "1476311928.65921"}}, {"model": "stations.station", "pk": 55, "fields": {"code": "SIMI", "begt": "1475712000.00000", "endt": "9999999999.99900", "lat": "38.6585", "lon": "69.0083", "elev": "1.4005", "staname": "Simiganj, Tajikistan", "lddate": "1487708090.84130"}}]
+[
+   {
+      "model": "stations.station",
+      "pk": 1,
+      "fields": {
+         "code": "AAK",
+         "start_date": "655689600.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "42.6375",
+         "longitude": "74.4942",
+         "elevation": "1.6331",
+         "site": "Ala Archa, Kyrgyzstan",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 2,
+      "fields": {
+         "code": "ABKT",
+         "start_date": "735696000.00000",
+         "end_date": "1388447999.90000",
+         "latitude": "37.9304",
+         "longitude": "58.1189",
+         "elevation": "0.6780",
+         "site": "Alibek, Turkmenistan",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 3,
+      "fields": {
+         "code": "ABPO",
+         "start_date": "1175644800.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "-19.0180",
+         "longitude": "47.2290",
+         "elevation": "1.5280",
+         "site": "Ambohimpanompo, Madagascar",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 4,
+      "fields": {
+         "code": "ALE",
+         "start_date": "635385600.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "82.5033",
+         "longitude": "-62.3500",
+         "elevation": "0.0600",
+         "site": "Alert, NU, Canada",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 5,
+      "fields": {
+         "code": "ARU",
+         "start_date": "590198400.00000",
+         "end_date": "1254095999.90000",
+         "latitude": "56.4302",
+         "longitude": "58.5625",
+         "elevation": "0.2500",
+         "site": "Arti, Russia",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 6,
+      "fields": {
+         "code": "ARU",
+         "start_date": "1254096000.00000",
+         "end_date": "1536451199.99900",
+         "latitude": "56.4293",
+         "longitude": "58.5615",
+         "elevation": "0.2600",
+         "site": "Arti, Russia",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 7,
+      "fields": {
+         "code": "ARTI",
+         "start_date": "1536451200.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "56.3879",
+         "longitude": "58.3849",
+         "elevation": "0.3200",
+         "site": "Arti, Russia",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 8,
+      "fields": {
+         "code": "ASCN",
+         "start_date": "780969600.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "-7.9327",
+         "longitude": "-14.3601",
+         "elevation": "0.1730",
+         "site": "Butt Crater, Ascension Island",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 9,
+      "fields": {
+         "code": "BFO",
+         "start_date": "833328000.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "48.3301",
+         "longitude": "8.3296",
+         "elevation": "0.6380",
+         "site": "Black Forest Observatory, Schiltach, Germany",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 10,
+      "fields": {
+         "code": "BORG",
+         "start_date": "775526400.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "64.7474",
+         "longitude": "-21.3268",
+         "elevation": "0.1100",
+         "site": "Borgarfjordur, Asbjarnarstadir, Iceland",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 11,
+      "fields": {
+         "code": "BORK",
+         "start_date": "1566432000.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "53.0461",
+         "longitude": "70.3184",
+         "elevation": "0.3340",
+         "site": "Burabay, Kazakhstan",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 12,
+      "fields": {
+         "code": "BRVK",
+         "start_date": "778377600.00000",
+         "end_date": "1566431999.99900",
+         "latitude": "53.0581",
+         "longitude": "70.2828",
+         "elevation": "0.3300",
+         "site": "Borovoye, Kazakhstan",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 13,
+      "fields": {
+         "code": "CMLA",
+         "start_date": "826416000.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "37.7637",
+         "longitude": "-25.5243",
+         "elevation": "0.4290",
+         "site": "Cha de Macela, Sao Miguel Island, Azores",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 14,
+      "fields": {
+         "code": "COCO",
+         "start_date": "850608000.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "-12.1901",
+         "longitude": "96.8349",
+         "elevation": "0.0010",
+         "site": "West Island, Cocos (Keeling) Islands",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 15,
+      "fields": {
+         "code": "DGAR",
+         "start_date": "1074729600.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "-7.4121",
+         "longitude": "72.4525",
+         "elevation": "0.0010",
+         "site": "Diego Garcia, Chagos Islands, Indian Ocean",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 16,
+      "fields": {
+         "code": "EFI",
+         "start_date": "824428800.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "-51.6753",
+         "longitude": "-58.0637",
+         "elevation": "0.1100",
+         "site": "Mount Kent, East Falkland Island",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 17,
+      "fields": {
+         "code": "ERM",
+         "start_date": "643248000.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "42.0150",
+         "longitude": "143.1572",
+         "elevation": "0.0400",
+         "site": "Erimo, Hokkaido Island, Japan",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 18,
+      "fields": {
+         "code": "ESK",
+         "start_date": "563760000.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "55.3167",
+         "longitude": "-3.2050",
+         "elevation": "0.2420",
+         "site": "Eskdalemuir, Scotland, UK",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 19,
+      "fields": {
+         "code": "FFC",
+         "start_date": "746496000.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "54.7250",
+         "longitude": "-101.9783",
+         "elevation": "0.3380",
+         "site": "Flin Flon, Canada",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 20,
+      "fields": {
+         "code": "GAR",
+         "start_date": "590198400.00000",
+         "end_date": "707097599.90000",
+         "latitude": "39.0052",
+         "longitude": "70.3328",
+         "elevation": "1.3000",
+         "site": "Garm, Tajikistan",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 21,
+      "fields": {
+         "code": "HOPE",
+         "start_date": "850176000.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "-54.2836",
+         "longitude": "-36.4879",
+         "elevation": "0.0200",
+         "site": "Hope Point, South Georgia Island",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 22,
+      "fields": {
+         "code": "JTS",
+         "start_date": "798595200.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "10.2908",
+         "longitude": "-84.9525",
+         "elevation": "0.3400",
+         "site": "Las Juntas de Abangares, Costa Rica",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 23,
+      "fields": {
+         "code": "KAPI",
+         "start_date": "918259200.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "-5.0142",
+         "longitude": "119.7517",
+         "elevation": "0.3000",
+         "site": "Kappang, Sulawesi, Indonesia",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 24,
+      "fields": {
+         "code": "KDAK",
+         "start_date": "865814400.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "57.7828",
+         "longitude": "-152.5835",
+         "elevation": "0.1520",
+         "site": "Kodiak Island, Alaska, USA",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 25,
+      "fields": {
+         "code": "KIV",
+         "start_date": "590198400.00000",
+         "end_date": "760060799.90000",
+         "latitude": "43.9562",
+         "longitude": "42.6888",
+         "elevation": "1.2100",
+         "site": "Kislovodsk, Russia",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 26,
+      "fields": {
+         "code": "KIV",
+         "start_date": "760060800.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "43.9553",
+         "longitude": "42.6863",
+         "elevation": "1.0540",
+         "site": "Kislovodsk, Russia",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 27,
+      "fields": {
+         "code": "KURK",
+         "start_date": "796176000.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "50.7154",
+         "longitude": "78.6202",
+         "elevation": "0.1840",
+         "site": "Kurchatov, Kazakhstan",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 28,
+      "fields": {
+         "code": "KWAJ",
+         "start_date": "930009600.00000",
+         "end_date": "1502226539.99900",
+         "latitude": "8.8019",
+         "longitude": "167.6130",
+         "elevation": "0.0000",
+         "site": "Kwajalein Atoll, Pacific Ocean",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 29,
+      "fields": {
+         "code": "KWJN",
+         "start_date": "1501286400.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "9.2873",
+         "longitude": "167.5369",
+         "elevation": "0.0000",
+         "site": "Gagan, Kwajalein Atoll, Marshall Islands",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 30,
+      "fields": {
+         "code": "LVZ",
+         "start_date": "723168000.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "67.8979",
+         "longitude": "34.6514",
+         "elevation": "0.6300",
+         "site": "Lovozero, Russia",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 31,
+      "fields": {
+         "code": "MBAR",
+         "start_date": "937958400.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "-0.6019",
+         "longitude": "30.7382",
+         "elevation": "1.3900",
+         "site": "Mbarara, Uganda",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 32,
+      "fields": {
+         "code": "MSEY",
+         "start_date": "800496000.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "-4.6737",
+         "longitude": "55.4792",
+         "elevation": "0.4750",
+         "site": "Mahe, Seychelles",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 33,
+      "fields": {
+         "code": "MSVF",
+         "start_date": "769737600.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "-17.7448",
+         "longitude": "178.0528",
+         "elevation": "0.8011",
+         "site": "Monasavu, Fiji",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 34,
+      "fields": {
+         "code": "NIL",
+         "start_date": "787708800.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "33.6506",
+         "longitude": "73.2686",
+         "elevation": "0.6290",
+         "site": "Nilore, Pakistan",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 35,
+      "fields": {
+         "code": "NNA",
+         "start_date": "582940800.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "-11.9875",
+         "longitude": "-76.8422",
+         "elevation": "0.5750",
+         "site": "Nana, Peru",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 36,
+      "fields": {
+         "code": "NRIL",
+         "start_date": "724377600.00000",
+         "end_date": "939859199.90000",
+         "latitude": "69.5049",
+         "longitude": "88.4414",
+         "elevation": "0.0920",
+         "site": "Norilsk, Russia",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 37,
+      "fields": {
+         "code": "NVS",
+         "start_date": "711158400.00000",
+         "end_date": "761356799.90000",
+         "latitude": "54.8404",
+         "longitude": "83.2346",
+         "elevation": "0.1500",
+         "site": "Novosibirsk, Russia",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 38,
+      "fields": {
+         "code": "OBN",
+         "start_date": "590198400.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "55.1146",
+         "longitude": "36.5674",
+         "elevation": "0.1600",
+         "site": "Obninsk, Russia",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 39,
+      "fields": {
+         "code": "PALK",
+         "start_date": "966902400.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "7.2728",
+         "longitude": "80.7022",
+         "elevation": "0.4600",
+         "site": "Pallekele, Sri Lanka",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 40,
+      "fields": {
+         "code": "PFO",
+         "start_date": "530496000.00000",
+         "end_date": "1152748799.90000",
+         "latitude": "33.6092",
+         "longitude": "-116.4553",
+         "elevation": "1.2800",
+         "site": "Pinon Flat, California, USA",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 41,
+      "fields": {
+         "code": "PFO",
+         "start_date": "1152748800.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "33.6107",
+         "longitude": "-116.4555",
+         "elevation": "1.2800",
+         "site": "Pinon Flat, California, USA",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 42,
+      "fields": {
+         "code": "RAYN",
+         "start_date": "820454400.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "23.5225",
+         "longitude": "45.5032",
+         "elevation": "0.6310",
+         "site": "Ar Rayn, Saudi Arabia",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 43,
+      "fields": {
+         "code": "RPN",
+         "start_date": "550713600.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "-27.1267",
+         "longitude": "-109.3344",
+         "elevation": "0.1100",
+         "site": "Rapanui, Easter Island, Chile",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 44,
+      "fields": {
+         "code": "SACV",
+         "start_date": "959558400.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "14.9702",
+         "longitude": "-23.6085",
+         "elevation": "0.3870",
+         "site": "Santiago Island, Cape Verde",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 45,
+      "fields": {
+         "code": "SHEL",
+         "start_date": "803520000.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "-15.9594",
+         "longitude": "-5.7455",
+         "elevation": "0.5370",
+         "site": "Horse Pasture, St. Helena Island",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 46,
+      "fields": {
+         "code": "SUR",
+         "start_date": "657244800.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "-32.3797",
+         "longitude": "20.8117",
+         "elevation": "1.7700",
+         "site": "Sutherland, South Africa",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 47,
+      "fields": {
+         "code": "TAU",
+         "start_date": "758764800.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "-42.9099",
+         "longitude": "147.3204",
+         "elevation": "0.1320",
+         "site": "Hobart, Tasmania, Australia",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 48,
+      "fields": {
+         "code": "TLY",
+         "start_date": "655689600.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "51.6807",
+         "longitude": "103.6438",
+         "elevation": "0.5790",
+         "site": "Talaya, Russia",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 49,
+      "fields": {
+         "code": "UOSS",
+         "start_date": "1241654400.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "24.9453",
+         "longitude": "56.2042",
+         "elevation": "0.2844",
+         "site": "Univ. of Sharjah, Sharjah, United Arab Emirates",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 50,
+      "fields": {
+         "code": "WRAB",
+         "start_date": "764726400.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "-19.9336",
+         "longitude": "134.3600",
+         "elevation": "0.3660",
+         "site": "Tennant Creek, NT, Australia",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 51,
+      "fields": {
+         "code": "XBFO",
+         "start_date": "1537142400.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "48.3301",
+         "longitude": "8.3296",
+         "elevation": "0.6380",
+         "site": "Black Forest Observatory, Schiltach, Germany",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 52,
+      "fields": {
+         "code": "XPF",
+         "start_date": "755913600.00000",
+         "end_date": "1136073599.90000",
+         "latitude": "33.6092",
+         "longitude": "-116.4533",
+         "elevation": "1.2800",
+         "site": "Pinon Flat, California, USA",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 53,
+      "fields": {
+         "code": "XPF",
+         "start_date": "1136073600.00000",
+         "end_date": "1182880799.90000",
+         "latitude": "33.6107",
+         "longitude": "-116.4555",
+         "elevation": "1.2800",
+         "site": "Pinon Flat, California, USA",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 54,
+      "fields": {
+         "code": "XPFO",
+         "start_date": "1182816000.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "33.6107",
+         "longitude": "-116.4555",
+         "elevation": "1.2800",
+         "site": "Pinon Flat, California, USA",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 55,
+      "fields": {
+         "code": "SIMI",
+         "start_date": "1475712000.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "38.6585",
+         "longitude": "69.0083",
+         "elevation": "1.4005",
+         "site": "Simiganj, Tajikistan",
+         "network_id": 1
+      }
+   }
+]
