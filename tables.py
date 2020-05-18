@@ -31,7 +31,11 @@ class Table:
 
     # Initializer / Instance Attributes
     def __init__(self):
-        pass
+        self.tableName = None   # str: name of source datascope table
+        self.fieldList = None   # [str]: table field names for output
+        self.ranges = None      # tuple of tuple pairs that contain the 
+                                #     start column and length for each field
+                                #     in source table
 
     # Extract method
     def extract(self):
@@ -43,7 +47,7 @@ class Site(Table):
     # Initializer / Instance Attributes
     def __init__(self):
         self.tableName = "IDA.site"
-        self.fieldList = ["code", "begt", "endt", "lat", "lon", "elev", "staname", "lddate"]
+        self.fieldList = ["code", "begt", "endt", "latitude", "longitude", "elevation", "staname", "lddate"]
         self.ranges = ((0,6), (7,17), (25,17), (43,9), (53,9), (63,9), (73,50), (125,17))
 
 class Chan(Table):
@@ -51,7 +55,7 @@ class Chan(Table):
     # Initializer / Instance Attributes
     def __init__(self):
         self.tableName = "IDA.chan"
-        self.fieldList = ["sta", "chn", "loc", "begt", "endt", "edepth", "hang", "vang", "flag", "instype", "nomfreq"]
+        self.fieldList = ["sta", "chn", "loc", "begt", "endt", "depth", "azimuth", "dip", "flag", "instype", "nomfreq"]
         self.ranges = ((0,6), (7,8), (16,2), (19,17), (37,17), (55,9), (65,6), (72,6), (79,2), (82,6), (89,16))
 
 class Abbrev(Table):
