@@ -47,7 +47,7 @@ class Site(Table):
     # Initializer / Instance Attributes
     def __init__(self):
         self.tableName = "IDA.site"
-        self.fieldList = ["code", "begt", "endt", "latitude", "longitude", "elevation", "staname", "lddate"]
+        self.fieldList = ["code", "start_date", "end_date", "latitude", "longitude", "elevation", "site"]
         self.ranges = ((0,6), (7,17), (25,17), (43,9), (53,9), (63,9), (73,50), (125,17))
 
 class Chan(Table):
