@@ -91,8 +91,8 @@ class Table:
         idx = 1
         for recNdx, line in enumerate(table_fp):
             # skip if not within the reange, if specified
-            if (firstRecNdx and recNdx < firstRecNdx) or \
-                (lastRecNdx and recNdx > lastRecNdx):
+            if ((firstRecNdx is not None) and recNdx < firstRecNdx) or \
+                ((lastRecNdx is not None) and recNdx > lastRecNdx):
                 continue
 
             columnList = []
