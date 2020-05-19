@@ -232,7 +232,7 @@ class Chan(Table):
                 ((startdt+1.0) > float(sta['fields']['start_date'])) and
                 ((enddt-1.0) < float(sta['fields']['end_date']))), None)
         if sta:
-            chanRec['fields']['station_id'] = sta["pk"]
+            chanRec['fields']['station'] = sta["pk"]
             chanRec['fields']['elevation'] = sta['fields']['elevation']
             chanRec['fields']['longitude'] = sta['fields']['longitude']
             chanRec['fields']['latitude'] = sta['fields']['latitude']
