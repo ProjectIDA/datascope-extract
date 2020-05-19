@@ -1,0 +1,12 @@
+[
+   {
+      "model": "stations.network",
+      "pk": 1,
+      "fields": {
+         "code": "II",
+         "description": "(GSN) Global Seismograph Network (IRIS/IDA)",
+         "start_date": 504925200.0,
+         "end_date": 9999999999.0
+      }
+   }
+]

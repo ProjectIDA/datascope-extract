@@ -15,31 +15,31 @@ def main():
 
     instype = Instype()
     instypeRecs = instype.extract()
-    instype.saveJSON()
+    instype.saveJSON('output/initial_instype_data.json')
 
     network = Network()
     networkRecs = network.extract()
-    network.saveJSON()
+    network.saveJSON('output/initial_network_data.json')
 
     site = Site(networkRecs)
     siteRecs = site.extract()
-    site.saveJSON()
+    site.saveJSON('output/initial_station_data.json')
 
     chan = Chan(instypeRecs, siteRecs)
     chanRecs = chan.extract()
-    chan.saveJSON()
+    chan.saveJSON('output/initial_chan_data.json')
 
     stage = Stage(chanRecs)
     stage.extract()
-    stage.saveJSON()
+    stage.saveJSON('output/initial_stage_data.json')
 
     seedloc = Seedloc()
     seedloc.extract()
-    seedloc.saveJSON()
+    seedloc.saveJSON('output/initial_seedloc_data.json')
 
     units = Units()
     units.extract()
-    units.saveJSON()
+    units.saveJSON('output/initial_units_data.json')
 
 ################################################################################
 
@@ -113,19 +113,17 @@ class Table:
         self.dataList = self.readTable()
         return self.dataList
 
-    def jsonFilename(self):
-        return self.tableName + ".json"
+    # def jsonFilename(self):
+    #     return self.tableName + ".json"
 
-    def saveJSON(self):
+    def saveJSON(self, oFilename):
 
         if not self.dataList:
             print("Error: Can't write JSON before extracting data.")
             return
 
-        jsonOut = self.jsonFilename()
-
         try:
-            json_fp = open(jsonOut, 'w')
+            json_fp = open(oFilename, 'w')
         except FileNotFoundError:
             print("File does not exist: {}".format(jsonOut))
             raise SystemExit
