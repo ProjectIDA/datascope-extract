@@ -97,7 +97,10 @@ class Table:
 
             columnList = []
             for rng in self.ranges:
-                columnList.append(line[rng[0]:rng[0]+rng[1]].strip())
+                val_str = line[rng[0]:rng[0]+rng[1]].strip()
+                if val_str == '-':
+                    val_str = ""  # blank out datascope 'null' values
+                columnList.append(val_str)
                 columnDict = dict(zip(self.fieldList, columnList))
 
             rowDict = { "model" : self.djangoModel, "pk" : idx, "fields" : columnDict }
@@ -125,10 +128,10 @@ class Table:
         try:
             json_fp = open(oFilename, 'w')
         except FileNotFoundError:
-            print("File does not exist: {}".format(jsonOut))
+            print("File does not exist: {}".format(oFilename))
             raise SystemExit
         except IOError:
-            print ("Could not read from: {}".format(jsonOut))
+            print ("Could not read from: {}".format(oFilename))
             raise SystemExit
 
         json_string = json.dumps(self.dataList, indent=3)
@@ -289,8 +292,8 @@ class Stage(Table):
     def __init__(self, chanList):
         self.djangoModel = 'stations.stage'
         self.tableName = "IDA.stage"
-        self.fieldList = ["sta", "chn", "loc", "start_date", "end_date", "stageid", "ssident", "gnom", "gcalib", "input_units", "output_units", "izero", "decimation_factor", "decimation_input_sample_rate", "dir", "dfile", "stage_gain"]
-        self.ranges = ((0,6), (7,8), (16,2), (19,17), (37,17), (55,8), (64,16), (81,11), (93,10), (104,16), (121,16), (138,8), (147,8), (156,11), (180,64), (245,32))
+        self.fieldList = ["stacode", "chncode", "location", "start_date", "end_date", "stageid", "ssident", "gnom", "gcalib", "input_units", "output_units", "decimation_factor", "decimation_input_sample_rate", "dir", "dfile"]
+        self.ranges = ((0,6), (7,8), (16,2), (19,17), (37,17), (55,8), (64,16), (81,11), (93,10), (104,16), (121,16), (147,8), (156,11), (180,64), (245,32))
 
     ######
     # NOTE: stage_gain = gnom * gcalib
