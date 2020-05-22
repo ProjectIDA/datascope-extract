@@ -29,7 +29,7 @@ def main():
     chanRecs = chan.extract()
     chan.saveJSON('output/initial_chan_data.json')
 
-    stage = Stage(chanRecs)
+    stage = Stage(siteRecs, chanRecs)
     stage.extract()
     stage.saveJSON('output/initial_stage_data.json')
 
@@ -206,6 +206,19 @@ class Chan(Table):
 
         # need to pull in data from  site and abbrev lists
         for _, chanRec in enumerate(self.dataList):
+            
+            # kinda kludgey, but constructing an epoch key to facilitate 
+            # lookup of the channelepoch record for each stage record later
+            # this must be done before 'station' is populated with Station PK value
+            chanRec['epoch_key'] = '|'.join([
+                chanRec['fields']['station'],
+                chanRec['fields']['code'],
+                chanRec['fields']['location_code'],
+                chanRec['fields']['start_date'],
+                chanRec['fields']['end_date']
+            ])
+
+            self.fixDip(chanRec)
 
             # pull down data from parent site record
             if not self.getSiteListInfo(chanRec):
@@ -259,6 +272,10 @@ class Chan(Table):
 
         return True
 
+    def fixDip(self, chanRec):
+
+        chanRec['fields']['dip'] = str(float(chanRec['fields']['dip']) - 90)
+
 
 class Instype(Table):
 
@@ -289,16 +306,64 @@ class Seedloc(Table):
 class Stage(Table):
 
     # Initializer / Instance Attributes
-    def __init__(self, chanList):
+    def __init__(self, siteList, chanList):
         self.djangoModel = 'stations.stage'
         self.tableName = "IDA.stage"
-        self.fieldList = ["stacode", "chncode", "location", "start_date", "end_date", "stageid", "ssident", "gnom", "gcalib", "input_units", "output_units", "decimation_factor", "decimation_input_sample_rate", "dir", "dfile"]
+        self.fieldList = ["station", "chncode", "location", "start_date", "end_date", "stageid", "ssident", "gnom", "gcalib", "input_units", "output_units", "decimation_factor", "decimation_input_sample_rate", "dir", "dfile"]
         self.ranges = ((0,6), (7,8), (16,2), (19,17), (37,17), (55,8), (64,16), (81,11), (93,10), (104,16), (121,16), (147,8), (156,11), (180,64), (245,32))
+        self.siteList = siteList
 
-    ######
-    # NOTE: stage_gain = gnom * gcalib
-    # NOTE: inoput nad output units will need to be converted using units table.
-    ######
+        # construct large dict with epoch_key as key of each 'fields' dict in chanList
+        self.chanEpochs = {}
+        for chan in chanList:
+            self.chanEpochs[chan['epoch_key']] = chan['pk']
+
+    def extract(self):
+        self.dataList = self.readTable()
+
+        # need to pull in data from  site and abbrev lists
+        for _, stageRec in enumerate(self.dataList):
+            
+            # kinda kludgey, but constructing an epoch key to facilitate 
+            # lookup of the channelepoch record for each stage record later
+            # this must be done before 'station' is populated with Station PK value
+            epoch_key = '|'.join([
+                stageRec['fields']['station'],
+                stageRec['fields']['chncode'],
+                stageRec['fields']['location'],
+                stageRec['fields']['start_date'],
+                stageRec['fields']['end_date']
+            ])
+
+            stageRec['fields']['channel_epoch'] = self.chanEpochs[epoch_key]
+
+            # pull down data from parent site record
+            if not self.getSiteListInfo(stageRec):
+                print(f'Station not found for chan rec {stageRec}. This is very bad.')
+                return None
+
+        return self.dataList
+
+    def getSiteListInfo(self, stageRec):
+        """ looks up record in siteList for stageRec bu station 'code'.
+            Retrieves elevation, latitude and longitude from site record
+            and initializes chan level fields. """
+
+        code = stageRec['fields']['station']
+        startdt = float(stageRec['fields']['start_date'])
+        enddt = float(stageRec['fields']['end_date'])
+
+        sta = next((sta for sta in self.siteList 
+            if (sta['fields']['code'] == code) and 
+                ((startdt+1.0) > float(sta['fields']['start_date'])) and
+                ((enddt-1.0) < float(sta['fields']['end_date']))), None)
+        if sta:
+            stageRec['fields']['station'] = sta["pk"]
+        else:
+            return False
+
+        return True
+
 
 class Units(Table):
 
