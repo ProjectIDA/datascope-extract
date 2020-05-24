@@ -52,8 +52,11 @@ class Table:
         self.ranges = []        # tuple of tuple pairs that contain the 
                                 #   start column and length for each field
                                 #   in source table
+        self.excludeFields = [] # list of indxes into the self.fieldList of
+                                #   fields NOT not to include in the ['fields']
+                                #   dictionary for output
         self.djangoModel = None # model name for django loaddata function
-        self.dataList = [  ]    # [dict]: list of dicts each of which represents
+        self.dataList = [  ]    # [dict]:list of dicts each of which represents
                                 #   a single row in the source table
 
     def readTable(self, firstRecNdx=None, lastRecNdx=None):
@@ -125,6 +128,12 @@ class Table:
             print("Error: Can't write JSON before extracting data.")
             return
 
+        # if excludeFields is not empty, remove the fields from fixture
+        if self.excludeFields:
+            for rec in self.dataList:
+                for fndx in self.excludeFields:
+                    del rec['fields'][self.fieldList[fndx]]
+
         try:
             json_fp = open(oFilename, 'w')
         except FileNotFoundError:
@@ -153,6 +162,7 @@ class Network(Table):
         self.tableName = "IDA.abbrev"
         self.fieldList = ["code", "description"]
         self.ranges = ((0,6), (7,50))
+        self.excludeFields = []
 
     def jsonFilename(self):
         return "IDA.network.json"
@@ -175,6 +185,7 @@ class Site(Table):
         self.tableName = "IDA.site"
         self.fieldList = ["code", "start_date", "end_date", "latitude", "longitude", "elevation", "site"]
         self.ranges = ((0,6), (7,17), (25,17), (43,9), (53,9), (63,9), (73,50), (125,17))
+        self.excludeFields = []
 
     def extract(self):
         self.dataList = self.readTable()
@@ -196,6 +207,7 @@ class Chan(Table):
         self.tableName = "IDA.chan"
         self.fieldList = ["station", "code", "location_code", "start_date", "end_date", "depth", "azimuth", "dip", "types", "sensor", "nomfreq", "elevation"]
         self.ranges = ((0,6), (7,8), (16,2), (19,17), (37,17), (55,9), (65,6), (72,6), (79,2), (82,6), (89,16))
+        self.excludeFields = []
         self.abbrevList = abbrevs
         self.siteList = sites
 
@@ -285,6 +297,7 @@ class Instype(Table):
         self.tableName = "IDA.abbrev"
         self.fieldList = ["abbrev", "description"]
         self.ranges = ((0,6), (7,50))
+        self.excludeFields = []
 
     def jsonFilename(self):
         return 'IDA.instype.json'
@@ -302,6 +315,7 @@ class Seedloc(Table):
         self.tableName = "IDA.seedloc"
         self.fieldList = ["sta", "chn", "start_date", "endt", "seedchn", "loc", "lddate"]
         self.ranges = ((0,6), (7,8), (16,17), (34,17), (52,6), (59,2), (62,17))
+        self.excludeFields = []
 
 class Stage(Table):
 
@@ -309,8 +323,9 @@ class Stage(Table):
     def __init__(self, siteList, chanList):
         self.djangoModel = 'stations.stage'
         self.tableName = "IDA.stage"
-        self.fieldList = ["station", "chncode", "location", "start_date", "end_date", "stageid", "ssident", "gnom", "gcalib", "input_units", "output_units", "decimation_factor", "decimation_input_sample_rate", "dir", "dfile"]
+        self.fieldList = ["station", "chncode", "location", "start_date", "end_date", "stage_ndx", "serial_number", "gnom", "gcalib", "input_units", "output_units", "decimation_factor", "decimation_input_sample_rate", "sp_dir", "sp_filename"]
         self.ranges = ((0,6), (7,8), (16,2), (19,17), (37,17), (55,8), (64,16), (81,11), (93,10), (104,16), (121,16), (147,8), (156,11), (180,64), (245,32))
+        self.excludeFields = [1,2,3,4]
         self.siteList = siteList
 
         # construct large dict with epoch_key as key of each 'fields' dict in chanList
@@ -373,6 +388,7 @@ class Units(Table):
         self.tableName = "IDA.units"
         self.fieldList = ["unit", "desc"]
         self.ranges = ((0,16), (17,50))
+        self.excludeFields = []
 
 
 ################################################################################
