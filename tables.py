@@ -29,7 +29,7 @@ def main():
     chanRecs = chan.extract()
     chan.saveJSON('output/initial_chan_data.json')
 
-    stage = Stage(chanRecs)
+    stage = Stage(siteRecs, chanRecs)
     stage.extract()
     stage.saveJSON('output/initial_stage_data.json')
 
@@ -52,8 +52,11 @@ class Table:
         self.ranges = []        # tuple of tuple pairs that contain the 
                                 #   start column and length for each field
                                 #   in source table
+        self.excludeFields = [] # list of indxes into the self.fieldList of
+                                #   fields NOT not to include in the ['fields']
+                                #   dictionary for output
         self.djangoModel = None # model name for django loaddata function
-        self.dataList = [  ]    # [dict]: list of dicts each of which represents
+        self.dataList = [  ]    # [dict]:list of dicts each of which represents
                                 #   a single row in the source table
 
     def readTable(self, firstRecNdx=None, lastRecNdx=None):
@@ -97,7 +100,10 @@ class Table:
 
             columnList = []
             for rng in self.ranges:
-                columnList.append(line[rng[0]:rng[0]+rng[1]].strip())
+                val_str = line[rng[0]:rng[0]+rng[1]].strip()
+                if val_str == '-':
+                    val_str = ""  # blank out datascope 'null' values
+                columnList.append(val_str)
                 columnDict = dict(zip(self.fieldList, columnList))
 
             rowDict = { "model" : self.djangoModel, "pk" : idx, "fields" : columnDict }
@@ -122,13 +128,19 @@ class Table:
             print("Error: Can't write JSON before extracting data.")
             return
 
+        # if excludeFields is not empty, remove the fields from fixture
+        if self.excludeFields:
+            for rec in self.dataList:
+                for fndx in self.excludeFields:
+                    del rec['fields'][self.fieldList[fndx]]
+
         try:
             json_fp = open(oFilename, 'w')
         except FileNotFoundError:
-            print("File does not exist: {}".format(jsonOut))
+            print("File does not exist: {}".format(oFilename))
             raise SystemExit
         except IOError:
-            print ("Could not read from: {}".format(jsonOut))
+            print ("Could not read from: {}".format(oFilename))
             raise SystemExit
 
         json_string = json.dumps(self.dataList, indent=3)
@@ -150,6 +162,7 @@ class Network(Table):
         self.tableName = "IDA.abbrev"
         self.fieldList = ["code", "description"]
         self.ranges = ((0,6), (7,50))
+        self.excludeFields = []
 
     def jsonFilename(self):
         return "IDA.network.json"
@@ -172,6 +185,7 @@ class Site(Table):
         self.tableName = "IDA.site"
         self.fieldList = ["code", "start_date", "end_date", "latitude", "longitude", "elevation", "site"]
         self.ranges = ((0,6), (7,17), (25,17), (43,9), (53,9), (63,9), (73,50), (125,17))
+        self.excludeFields = []
 
     def extract(self):
         self.dataList = self.readTable()
@@ -193,6 +207,7 @@ class Chan(Table):
         self.tableName = "IDA.chan"
         self.fieldList = ["station", "code", "location_code", "start_date", "end_date", "depth", "azimuth", "dip", "types", "sensor", "nomfreq", "elevation"]
         self.ranges = ((0,6), (7,8), (16,2), (19,17), (37,17), (55,9), (65,6), (72,6), (79,2), (82,6), (89,16))
+        self.excludeFields = []
         self.abbrevList = abbrevs
         self.siteList = sites
 
@@ -203,6 +218,19 @@ class Chan(Table):
 
         # need to pull in data from  site and abbrev lists
         for _, chanRec in enumerate(self.dataList):
+            
+            # kinda kludgey, but constructing an epoch key to facilitate 
+            # lookup of the channelepoch record for each stage record later
+            # this must be done before 'station' is populated with Station PK value
+            chanRec['epoch_key'] = '|'.join([
+                chanRec['fields']['station'],
+                chanRec['fields']['code'],
+                chanRec['fields']['location_code'],
+                chanRec['fields']['start_date'],
+                chanRec['fields']['end_date']
+            ])
+
+            self.fixDip(chanRec)
 
             # pull down data from parent site record
             if not self.getSiteListInfo(chanRec):
@@ -256,6 +284,10 @@ class Chan(Table):
 
         return True
 
+    def fixDip(self, chanRec):
+
+        chanRec['fields']['dip'] = str(float(chanRec['fields']['dip']) - 90)
+
 
 class Instype(Table):
 
@@ -265,6 +297,7 @@ class Instype(Table):
         self.tableName = "IDA.abbrev"
         self.fieldList = ["abbrev", "description"]
         self.ranges = ((0,6), (7,50))
+        self.excludeFields = []
 
     def jsonFilename(self):
         return 'IDA.instype.json'
@@ -282,20 +315,70 @@ class Seedloc(Table):
         self.tableName = "IDA.seedloc"
         self.fieldList = ["sta", "chn", "start_date", "endt", "seedchn", "loc", "lddate"]
         self.ranges = ((0,6), (7,8), (16,17), (34,17), (52,6), (59,2), (62,17))
+        self.excludeFields = []
 
 class Stage(Table):
 
     # Initializer / Instance Attributes
-    def __init__(self, chanList):
+    def __init__(self, siteList, chanList):
         self.djangoModel = 'stations.stage'
         self.tableName = "IDA.stage"
-        self.fieldList = ["sta", "chn", "loc", "start_date", "end_date", "stageid", "ssident", "gnom", "gcalib", "input_units", "output_units", "izero", "decimation_factor", "decimation_input_sample_rate", "dir", "dfile", "stage_gain"]
-        self.ranges = ((0,6), (7,8), (16,2), (19,17), (37,17), (55,8), (64,16), (81,11), (93,10), (104,16), (121,16), (138,8), (147,8), (156,11), (180,64), (245,32))
+        self.fieldList = ["station", "chncode", "location", "start_date", "end_date", "stage_ndx", "serial_number", "gnom", "gcalib", "input_units", "output_units", "decimation_factor", "decimation_input_sample_rate", "sp_dir", "sp_filename"]
+        self.ranges = ((0,6), (7,8), (16,2), (19,17), (37,17), (55,8), (64,16), (81,11), (93,10), (104,16), (121,16), (147,8), (156,11), (180,64), (245,32))
+        self.excludeFields = [1,2,3,4]
+        self.siteList = siteList
 
-    ######
-    # NOTE: stage_gain = gnom * gcalib
-    # NOTE: inoput nad output units will need to be converted using units table.
-    ######
+        # construct large dict with epoch_key as key of each 'fields' dict in chanList
+        self.chanEpochs = {}
+        for chan in chanList:
+            self.chanEpochs[chan['epoch_key']] = chan['pk']
+
+    def extract(self):
+        self.dataList = self.readTable()
+
+        # need to pull in data from  site and abbrev lists
+        for _, stageRec in enumerate(self.dataList):
+            
+            # kinda kludgey, but constructing an epoch key to facilitate 
+            # lookup of the channelepoch record for each stage record later
+            # this must be done before 'station' is populated with Station PK value
+            epoch_key = '|'.join([
+                stageRec['fields']['station'],
+                stageRec['fields']['chncode'],
+                stageRec['fields']['location'],
+                stageRec['fields']['start_date'],
+                stageRec['fields']['end_date']
+            ])
+
+            stageRec['fields']['channel_epoch'] = self.chanEpochs[epoch_key]
+
+            # pull down data from parent site record
+            if not self.getSiteListInfo(stageRec):
+                print(f'Station not found for chan rec {stageRec}. This is very bad.')
+                return None
+
+        return self.dataList
+
+    def getSiteListInfo(self, stageRec):
+        """ looks up record in siteList for stageRec bu station 'code'.
+            Retrieves elevation, latitude and longitude from site record
+            and initializes chan level fields. """
+
+        code = stageRec['fields']['station']
+        startdt = float(stageRec['fields']['start_date'])
+        enddt = float(stageRec['fields']['end_date'])
+
+        sta = next((sta for sta in self.siteList 
+            if (sta['fields']['code'] == code) and 
+                ((startdt+1.0) > float(sta['fields']['start_date'])) and
+                ((enddt-1.0) < float(sta['fields']['end_date']))), None)
+        if sta:
+            stageRec['fields']['station'] = sta["pk"]
+        else:
+            return False
+
+        return True
+
 
 class Units(Table):
 
@@ -305,6 +388,7 @@ class Units(Table):
         self.tableName = "IDA.units"
         self.fieldList = ["unit", "desc"]
         self.ranges = ((0,16), (17,50))
+        self.excludeFields = []
 
 
 ################################################################################
