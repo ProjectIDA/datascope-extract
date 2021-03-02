@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
 # system imports
+import argparse
+import pathlib
 import sys
 import os
 import json
@@ -10,36 +12,51 @@ import json
 
 ################################################################################
 def main():
-    # the order of procesing in important
+    parser = argparse.ArgumentParser(description="Specify output files for datascope extract")
+    parser.add_argument("--outdir",
+                        help="Optional argument, a directory for location of output files",
+                        type = pathlib.Path,
+                        action="store")
+    args = parser.parse_args()
+
+    if args.outdir:
+        output_file_directory = str(args.outdir)
+    else:
+        output_file_directory = "./output"
+
+    if not os.path.isdir(output_file_directory):
+        os.mkdir(output_file_directory)
+
+    # the order of processing in important
     # as some tables adepened on others.
 
     instype = Instype()
     instypeRecs = instype.extract()
-    instype.saveJSON('output/initial_instype_data.json')
+    instype.saveJSON(output_file_directory + '/initial_instype_data.json')
 
     network = Network()
     networkRecs = network.extract()
-    network.saveJSON('output/initial_network_data.json')
+    network.saveJSON(output_file_directory + '/initial_network_data.json')
 
     site = Site(networkRecs)
     siteRecs = site.extract()
-    site.saveJSON('output/initial_station_data.json')
+    site.saveJSON(output_file_directory + '/initial_station_data.json')
 
     chan = Chan(instypeRecs, siteRecs)
     chanRecs = chan.extract()
-    chan.saveJSON('output/initial_chan_data.json')
+    chan.saveJSON(output_file_directory + '/initial_chan_data.json')
 
     stage = Stage(siteRecs, chanRecs)
     stage.extract()
-    stage.saveJSON('output/initial_stage_data.json')
+    stage.saveJSON(output_file_directory + '/initial_stage_data.json')
 
     seedloc = Seedloc()
     seedloc.extract()
-    seedloc.saveJSON('output/initial_seedloc_data.json')
+    seedloc.saveJSON(output_file_directory + '/initial_seedloc_data.json')
 
     units = Units()
     units.extract()
-    units.saveJSON('output/initial_units_data.json')
+    units.saveJSON(output_file_directory + '/initial_units_data.json')
 
 ################################################################################
 
@@ -77,6 +94,7 @@ class Table:
         """
 
         dbDir = os.environ.get('IDA_DATASCOPEDB_DIR')
+        print("Using datascope files in: {}".format(dbDir))
         dbSite = dbDir + '/' +  self.tableName
 
         try:
