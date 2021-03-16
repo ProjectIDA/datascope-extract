@@ -1,1 +1,7 @@
+#! /bin/sh
+
+# extract_database requires the following env var.  It's
+# normally found on idadcc, but I found it necessary for
+# developing on another VM
+
 export IDA_DATASCOPEDB_DIR=/ida/dcc/db
