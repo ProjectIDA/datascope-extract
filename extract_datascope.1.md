@@ -22,7 +22,7 @@ idastatus database
 : display the usage message
 
 **\-\-outdir OUTPUT_DIRECTORY_NAME**
-: name of the directory in which to save the output.  If this is not specified, the default is used, a directory in the curren directory name "output"
+: name of the directory in which to save the output.  If this is not specified, the default is used, a directory in the current directory name "output"
 
 # ENVIRONMENT
 This script requires the **IDA_DATASCOPEDB_DIR** environment variable for the location of the datascope database files
