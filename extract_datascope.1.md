@@ -14,7 +14,7 @@ extract_datascope - tool to extract data from datascope database files and save 
 
 # DESCRIPTION
 **extract_datascope** is a simple Python script to extract data from our datascope database
-file and to output that data to JSON fixture files that are loadable by out PostgreSQL 
+files and to output that data to JSON fixture files that are loadable by our PostgreSQL 
 idastatus database
 
 # OPTIONS
