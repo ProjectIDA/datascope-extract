@@ -1,3 +1,11 @@
+---
+title: EXTRACT_DATASCOPE
+section: 1
+header: User Manual
+footer: extract_datascope 1.0.0
+date: March 18, 2021
+---
+
 # NAME
 extract_datascope - tool to extract data from datascope database files and save to JSON format
 
@@ -11,7 +19,7 @@ idastatus database
 
 # OPTIONS
 **-h**, **\-\-help**
-: display the usage message
+: display the usage messagec56
 
 **\-\-outdir OUTPUT\_DIRECTORY\_NAME**
 : name of the directory in which to save the output.  If this is not specified, the default is used, a directory in the current directory name "output"
