@@ -11,3 +11,7 @@ pages:			## make document pages from markdown
 
 viewpage:		## view the manpage
 	nroff -man docs/extract_datascope.1 | less
+
+release:		## echo release procedure
+	@echo "Do these release things"
+	@echo "first thing"

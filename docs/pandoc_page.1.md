@@ -19,7 +19,7 @@ idastatus database
 
 # OPTIONS
 **-h**, **\-\-help**
-: display the usage messagec56
+: display the usage message
 
 **\-\-outdir OUTPUT\_DIRECTORY\_NAME**
 : name of the directory in which to save the output.  If this is not specified, the default is used, a directory in the current directory name "output"

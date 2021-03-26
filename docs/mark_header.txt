@@ -1,4 +1,4 @@
 <!-- Space: Project IDA -->
 <!-- Parent: DCC Projects -->
-<!-- Parent: StationXML Generation -->
+<!-- Parent: StationXML_Generation -->
 <!-- Title: extract_datascope manpage -->
