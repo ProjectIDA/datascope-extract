@@ -18,3 +18,7 @@ idastatus database
 
 # ENVIRONMENT
 This script requires the **IDA_DATASCOPEDB_DIR** environment variable for the location of the datascope database files
+
+# NOTES
+The Makefile rule "release" describes the steps to create release documentation for this 
+tool and how to copy the resulting docs to the ProjectIDA Confluence Wiki page

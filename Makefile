@@ -12,6 +12,9 @@ pages:			## make document pages from markdown
 viewpage:		## view the manpage
 	nroff -man docs/extract_datascope.1 | less
 
-release:		## echo release procedure
-	@echo "Do these release things"
-	@echo "first thing"
+releasesteps:		## echo release procedure
+	@echo ""
+	@echo "Any changes to README.md should be followed by these steps:"
+	@echo "\t- Run the command 'make pages' in this directory"
+	@echo "\t- Copy the text of README.md into the ProjectIDA Confluence wiki at the"
+	@echo "\t  following page: Project IDA/DCC Projects/StationXML_Generation/extract_datascope tool"
