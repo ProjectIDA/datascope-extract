@@ -1,0 +1,8 @@
+---
+title: EXTRACT_DATASCOPE
+section: 1
+header: User Manual
+footer: extract_datascope 1.0.0
+date: March 18, 2021
+---
+
