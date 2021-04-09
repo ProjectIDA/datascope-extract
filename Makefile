@@ -18,3 +18,4 @@ releasesteps:		## echo release procedure
 	@echo "\t- Run the command 'make pages' in this directory"
 	@echo "\t- Copy the text of README.md into the ProjectIDA Confluence wiki at the"
 	@echo "\t  following page: Project IDA/DCC Projects/StationXML_Generation/extract_datascope tool"
+	@echo "\t  See the wiki page "Creating a manpage with Markdown for Confluence" for more details"
