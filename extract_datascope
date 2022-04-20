@@ -94,6 +94,9 @@ class Table:
         """
 
         dbDir = os.environ.get('IDA_DATASCOPEDB_DIR')
+        if dbDir == None:
+            sys.exit("Environment variable, IDA_DATASCOPEDB_DIR, is not set")
+
         dbSite = dbDir + '/' +  self.tableName
 
         try:

@@ -565,7 +565,7 @@
       "fields": {
          "code": "PFO",
          "start_date": "1152748800.00000",
-         "end_date": "9999999999.99900",
+         "end_date": "1588183199.99900",
          "latitude": "33.6107",
          "longitude": "-116.4555",
          "elevation": "1.2800",
@@ -576,6 +576,20 @@
    {
       "model": "stations.station",
       "pk": 42,
+      "fields": {
+         "code": "PFO",
+         "start_date": "1588183200.00000",
+         "end_date": "9999999999.99900",
+         "latitude": "33.6107",
+         "longitude": "-116.4544",
+         "elevation": "1.2800",
+         "site": "Pinon Flat, California, USA",
+         "network_id": 1
+      }
+   },
+   {
+      "model": "stations.station",
+      "pk": 43,
       "fields": {
          "code": "RAYN",
          "start_date": "820454400.00000",
@@ -589,7 +603,7 @@
    },
    {
       "model": "stations.station",
-      "pk": 43,
+      "pk": 44,
       "fields": {
          "code": "RPN",
          "start_date": "550713600.00000",
@@ -603,7 +617,7 @@
    },
    {
       "model": "stations.station",
-      "pk": 44,
+      "pk": 45,
       "fields": {
          "code": "SACV",
          "start_date": "959558400.00000",
@@ -617,7 +631,7 @@
    },
    {
       "model": "stations.station",
-      "pk": 45,
+      "pk": 46,
       "fields": {
          "code": "SHEL",
          "start_date": "803520000.00000",
@@ -631,7 +645,7 @@
    },
    {
       "model": "stations.station",
-      "pk": 46,
+      "pk": 47,
       "fields": {
          "code": "SUR",
          "start_date": "657244800.00000",
@@ -645,7 +659,7 @@
    },
    {
       "model": "stations.station",
-      "pk": 47,
+      "pk": 48,
       "fields": {
          "code": "TAU",
          "start_date": "758764800.00000",
@@ -659,7 +673,7 @@
    },
    {
       "model": "stations.station",
-      "pk": 48,
+      "pk": 49,
       "fields": {
          "code": "TLY",
          "start_date": "655689600.00000",
@@ -673,7 +687,7 @@
    },
    {
       "model": "stations.station",
-      "pk": 49,
+      "pk": 50,
       "fields": {
          "code": "UOSS",
          "start_date": "1241654400.00000",
@@ -687,7 +701,7 @@
    },
    {
       "model": "stations.station",
-      "pk": 50,
+      "pk": 51,
       "fields": {
          "code": "WRAB",
          "start_date": "764726400.00000",
@@ -701,7 +715,7 @@
    },
    {
       "model": "stations.station",
-      "pk": 51,
+      "pk": 52,
       "fields": {
          "code": "XBFO",
          "start_date": "1537142400.00000",
@@ -715,7 +729,7 @@
    },
    {
       "model": "stations.station",
-      "pk": 52,
+      "pk": 53,
       "fields": {
          "code": "XPF",
          "start_date": "755913600.00000",
@@ -729,7 +743,7 @@
    },
    {
       "model": "stations.station",
-      "pk": 53,
+      "pk": 54,
       "fields": {
          "code": "XPF",
          "start_date": "1136073600.00000",
@@ -743,7 +757,7 @@
    },
    {
       "model": "stations.station",
-      "pk": 54,
+      "pk": 55,
       "fields": {
          "code": "XPFO",
          "start_date": "1182816000.00000",
@@ -757,7 +771,7 @@
    },
    {
       "model": "stations.station",
-      "pk": 55,
+      "pk": 56,
       "fields": {
          "code": "SIMI",
          "start_date": "1475712000.00000",
