@@ -343,7 +343,7 @@ class Stage(Table):
     def __init__(self, siteList, chanList):
         self.djangoModel = 'stations.stage'
         self.tableName = "IDA.stage"
-        self.fieldList = ["station", "chn", "location", "start_date", "end_date", "stageid", "ssident", "gnom", "gcalib", "input_units", "output_units", "izero", "decimation_factor", "decimation_input_sample_rate", "dir", "dfile", "stage_gain"]
+        self.fieldList = ["station", "chn", "location", "start_date", "end_date", "stageid", "ssident", "gnom", "gcalib", "input_units", "output_units", "izero", "decimation_factor", "decimation_input_sample_rate", "sp_dir", "sp_filename", "stage_gain"]
         self.ranges = ((0,6), (7,8), (16,2), (19,17), (37,17), (55,8), (64,16), (81,11), (93,10), (104,16), (121,16), (138,8), (147,8), (156,11), (180,64), (245,32))
         self.excludeFields = [1,2,3,4]
         self.siteList = siteList
