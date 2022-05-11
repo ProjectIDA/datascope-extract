@@ -107,7 +107,7 @@
       "model": "stations.unit",
       "pk": 14,
       "fields": {
-         "unit": "DEGREES",
+         "unit": "DEGREE",
          "desc": "Direction in Degrees"
       }
    },
