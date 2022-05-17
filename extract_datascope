@@ -56,7 +56,7 @@ def main():
 
     units = Units()
     units.extract()
-    units.saveJSON(output_file_directory + '/initial_units_data.json')
+    units.saveJSON(output_file_directory + '/initial_unit_data.json')
 
 ################################################################################
 
