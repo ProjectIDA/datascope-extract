@@ -410,7 +410,7 @@ class Units(Table):
     def __init__(self):
         self.djangoModel = 'stations.unit'
         self.tableName = "IDA.units"
-        self.fieldList = ["unit", "desc"]
+        self.fieldList = ["unit", "description"]
         self.ranges = ((0,16), (17,50))
         self.excludeFields = []
 
