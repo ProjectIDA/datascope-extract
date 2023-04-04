@@ -191,7 +191,7 @@ class Network(Table):
         self.dataList = self.readTable(lastRecNdx=0)
 
         for net in self.dataList:
-            net['fields']['start_date'] = 504925200.0
+            net['fields']['start_date'] = 504921600.0 # this is Wednesday, January 1, 1986 0:00:00 GMT
             net['fields']['end_date'] = 9999999999.0
 
         return self.dataList
