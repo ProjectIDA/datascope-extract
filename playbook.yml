@@ -11,18 +11,15 @@
 
   vars:
     tmp_dir: "/tmp"
-    src_dir: "/usr/local/src"
     ida_dir: "/usr/local/ida"
     local_bin_dir: "/usr/local/bin"
 
   tasks:
       - name: Directory for download of source must exist
         file:
-          path: "{{ src_dir }}"
+          path: "{{ ida_dir }}"
           state: directory
         become: true
-        tags:
-        - datascope-extract-install
 
       - name: Change group
         ansible.builtin.file:
@@ -31,8 +28,6 @@
           recurse: yes
           group: idadcg
         become: true
-        tags:
-        - datascope-extract-install
 
       - name: Change file permissions
         ansible.builtin.file:
@@ -40,15 +35,11 @@
           state: directory
           mode: '0775'
         become: true
-        tags:
-        - datascope-extract-install
 
       - name: get datascope-extract repo
         git:
             repo: 'git@github.com:ProjectIDA/datascope-extract.git'
             dest: '{{ ida_dir }}/datascope-extract'
-        tags:
-        - datascope-extract-install
 
       - name: Change file ownership, group
         ansible.builtin.file:
@@ -58,8 +49,6 @@
           owner: idadcc
           group: idadcg
         become: true
-        tags:
-        - datascope-extract-install
 
       - name: Change file permissions
         ansible.builtin.file:
@@ -67,8 +56,6 @@
           state: directory
           mode: '0775'
         become: true
-        tags:
-        - datascope-extract-install
 
       - name: install extract_datascope
         copy:
@@ -79,5 +66,3 @@
           group: idadcc
           mode: 0775
         become: true
-        tags:
-        - datascope-extract-install
