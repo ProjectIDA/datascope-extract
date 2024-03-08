@@ -41,6 +41,7 @@ def main():
     site = Site(networkRecs)
     siteRecs = site.extract()
     site.saveJSON(output_file_directory + '/initial_station_data.json')
+    #site.createStaFiles(output_file_directory + '/initial_station_data')
 
     chan = Chan(instypeRecs, siteRecs)
     chanRecs = chan.extract()
@@ -49,6 +50,7 @@ def main():
     stage = Stage(siteRecs, chanRecs)
     stage.extract()
     stage.saveJSON(output_file_directory + '/initial_stage_data.json')
+    stage.saveSeparateJSON(output_file_directory + '/initial_stage_data')
 
     seedloc = Seedloc()
     seedloc.extract()
@@ -218,6 +220,42 @@ class Site(Table):
 
         return self.dataList
 
+    def createStaFiles(self, oFilename):
+
+        print("In createStaFiles")
+
+        if not self.dataList:
+            print("Error: Can't write JSON before extracting data.")
+            return
+
+        # if excludeFields is not empty, remove the fields from fixture
+        if self.excludeFields:
+            for rec in self.dataList:
+                for fndx in self.excludeFields:
+                    del rec['fields'][self.fieldList[fndx]]
+
+        fp_list = []
+
+        for rec in self.dataList:
+            station_str = "{}".format(rec['fields']['code'])
+            starttime_str = "{}".format(rec['fields']['start_date'])
+            endtime_str = "{}".format(rec['fields']['end_date'])
+            fname_by_station = oFilename + "_" + station_str + "_" + starttime_str + "_" + endtime_str + ".json"
+            print(fname_by_station)
+
+            try:
+                json_fp = open(fname_by_station, 'w')
+            except FileNotFoundError:
+                print("File does not exist: {}".format(fname_by_station))
+                raise SystemExit
+            except IOError:
+                print ("Could not read from: {}".format(fname_by_station))
+                raise SystemExit
+
+            #json_string = json.dumps(self.dataList, indent=3)
+            #json_fp.write(json_string)
+            json_fp.close()
+
 
 class Chan(Table):
 
@@ -265,7 +303,7 @@ class Chan(Table):
         return self.dataList
 
     def getSiteListInfo(self, chanRec):
-        """ looks up record in siteList for chanRec bu station 'code'.
+        """ looks up record in siteList for chanRec by station 'code'.
             Retrieves elevation, latitude and longitude from site record
             and initializes chan level fields. """
 
@@ -355,6 +393,7 @@ class Stage(Table):
 
     def extract(self):
         self.dataList = self.readTable()
+        self.dataDict = {}
 
         # need to pull in data from  site and abbrev lists
         for _, stageRec in enumerate(self.dataList):
@@ -376,6 +415,11 @@ class Stage(Table):
             if not self.getSiteListInfo(stageRec):
                 print(f'Station not found for chan rec {stageRec}. This is very bad.')
                 return None
+
+            if not self.dataDict.get(stageRec['fields']['station']):
+                self.dataDict[stageRec['fields']['station']] = []
+
+            self.dataDict[stageRec['fields']['station']].append(stageRec) 
 
         return self.dataList
 
@@ -403,6 +447,36 @@ class Stage(Table):
     # NOTE: stage_gain = gnom * gcalib
     # NOTE: input and output units will need to be converted using units table.
     ######
+
+
+    def saveSeparateJSON(self, oFilename):
+
+        if not self.dataList:
+            print("Error: Can't write JSON before extracting data.")
+            return
+
+        # if excludeFields is not empty, remove the fields from fixture
+        #if self.excludeFields:
+        #    for rec in self.dataList:
+        #        for fndx in self.excludeFields:
+        #            del rec['fields'][self.fieldList[fndx]]
+
+        for sta, datalist in self.dataDict.items():
+            fn = oFilename + "_" + str(sta) + ".json"
+            try:
+                json_fp = open(fn, 'w')
+            except FileNotFoundError:
+                print("File does not exist: {}".format(fn))
+                raise SystemExit
+            except IOError:
+                print ("Could not read from: {}".format(fn))
+                raise SystemExit
+
+            json_string = json.dumps(datalist, indent=3)
+
+            json_fp.write(json_string)
+            json_fp.close()
+
 
 class Units(Table):
 
